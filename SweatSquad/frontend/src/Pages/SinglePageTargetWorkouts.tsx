@@ -46,9 +46,7 @@ const SinglePageTargetWorkouts = () => {
     const url = 'https://fitnessb-api.onrender.com/fitness'
 
     const [data, isLoading, isErr] = useApi(url, queryParam);
-
     console.log(data);
-
     if (isLoading) {
 
         return <div className='bg-slate-200 h-screen flex justify-center items-center'>
