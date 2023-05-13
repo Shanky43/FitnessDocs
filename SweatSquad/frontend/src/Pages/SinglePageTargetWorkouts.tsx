@@ -53,7 +53,6 @@ const SinglePageTargetWorkouts = () => {
             <Link to="/"> <img alt='loading' src='https://icon-library.com/images/gif-loading-icon/gif-loading-icon-20.jpg' className='w-60'></img></Link>
         </div>
     }
-
     return (
         <div> <div><Navbar /></div>
             <div className='pt-[6%]'>
