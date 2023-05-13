@@ -38,7 +38,6 @@ const Navbar = () => {
 };
 const SinglePageTargetWorkouts = () => {
     const { target } = useParams<targetType>();
-
     const queryParam: Queryopt = { target: target };
     const url = 'https://fitnessb-api.onrender.com/fitness'
     const [data, isLoading, isErr] = useApi(url, queryParam);
