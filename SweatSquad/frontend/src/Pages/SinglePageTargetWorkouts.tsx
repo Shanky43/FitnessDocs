@@ -26,7 +26,6 @@ const Navbar = () => {
                             Products
                         </Link>
                     </li>
-
                     <li className="mx-4">
                         <Link to="/sigin" className="text-white" >
                             <button className="bg-[#f2305a] py-2 px-3 rounded-lg font-bold">Try fitnessB for free</button>
