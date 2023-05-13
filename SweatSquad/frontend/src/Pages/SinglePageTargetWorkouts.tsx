@@ -31,7 +31,6 @@ const Navbar = () => {
                             <button className="bg-[#f2305a] py-2 px-3 rounded-lg font-bold">Try fitnessB for free</button>
                         </Link>
                     </li>
-
                 </ul>
             </nav>
         </div>
