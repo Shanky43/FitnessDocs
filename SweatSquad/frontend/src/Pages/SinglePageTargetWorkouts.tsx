@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { Queryopt } from './../Custom Hookes/useApi';
+// import { Queryopt } from './../Custom Hookes/useApi';
 import useApi from './../Custom Hookes/useApi';
 import { Link } from 'react-router-dom';
 import logo from "../Assets/fitnessBLogo.png"
@@ -38,15 +38,26 @@ const Navbar = () => {
 };
 const SinglePageTargetWorkouts = () => {
     const { target } = useParams<targetType>();
-    const queryParam: Queryopt = { target: target };
-    const url = 'https://fitnessb-api.onrender.com/fitness'
-    const [data, isLoading, isErr] = useApi(url, queryParam);
-    console.log(data);
+
+    // const queryParam : Queryopt = {target : target};
+
+    // const url = `https://fitnessb-backend.onrender.com/products/exercise/${target}`
+
+    const url = `${process.env.REACT_APP_BASE_URL}/products/exercise/${target}` || '';
+
+    const [data, isLoading, isErr] = useApi(url);
+
+    console.log(data, 'dff');
+
     if (isLoading) {
 
         return <div className='bg-slate-200 h-screen flex justify-center items-center'>
-            <Link to="/"> <img alt='loading' src='https://icon-library.com/images/gif-loading-icon/gif-loading-icon-20.jpg' className='w-60'></img></Link>
+            <img alt='loading' src='https://icon-library.com/images/gif-loading-icon/gif-loading-icon-20.jpg' className='w-60'></img>
         </div>
+    }
+
+    if (isErr) {
+        return <h1>Something went wrong</h1>
     }
     return (
         <div> <div><Navbar /></div>
